@@ -1,3 +1,9 @@
+1.0.2
+
+  Update README structure
+  Center header gif
+  Increase gif size
+
 1.0.1
 
   Remove package.json
