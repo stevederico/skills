@@ -680,22 +680,34 @@ async function fetchWithCache(url) {
 - [ ] Consistent spacing and indentation
 - [ ] No commented-out code left behind
 
-### Accessibility Review
+### Accessibility Review (MANDATORY — WCAG 2.1 AA)
 
 **Essential Checks:**
-- [ ] All images have alt text
-- [ ] Form inputs have associated labels
+- [ ] All images have meaningful `alt` text
+- [ ] Form inputs have associated `<Label>` via `htmlFor`/`id`
+- [ ] `aria-label` on icon-only buttons
 - [ ] Buttons/links have descriptive text (not just "Click here")
 - [ ] Color is not the only indicator (use icons/text too)
 - [ ] Interactive elements are keyboard accessible
 - [ ] Focus states are visible
 - [ ] Heading hierarchy is logical (h1 → h2 → h3)
-- [ ] ARIA labels added where needed
+- [ ] Every page has `<main>` landmark; semantic `<header>`, `<footer>`, `<nav>`
+- [ ] Escape closes modals; focus trapping in dialogs
+- [ ] Honor `prefers-reduced-motion`
+- [ ] Dark backgrounds: `text-slate-400` minimum (not `text-slate-500`/`600`)
+
+### Image Optimization (MANDATORY)
+
+**Checks:**
+- [ ] WebP format with `<picture>` fallback to PNG/JPG
+- [ ] Explicit `width`/`height` on all `<img>` (prevents CLS)
+- [ ] Images sized to 2x display max (e.g., 176px display → 352px file)
+- [ ] Compressed aggressively: `cwebp -q 85` for WebP
 
 ### Mobile Responsiveness
 
 **Checks:**
-- [ ] Touch targets are minimum 44x44px
+- [ ] Touch targets are minimum 44px
 - [ ] Text is readable without zooming
 - [ ] No horizontal scroll on mobile
 - [ ] Forms are usable on mobile keyboards

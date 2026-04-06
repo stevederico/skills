@@ -1,3 +1,14 @@
+1.1.0
+
+  Sync subagents with CLAUDE.md
+  Backend Express to Hono
+  Frontend Vite 7.1 react-router 7.9
+  Add shadcn skateboard-ui imports
+  Add accessibility image standards
+  Add rate limiting circuit breaker
+  Add Railway deploy rules
+  Fix env var pattern to loadLocalENV
+
 1.0.2
 
   Update README structure

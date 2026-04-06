@@ -334,7 +334,7 @@ function validateEmail(email) {
 const username = req.body.username.trim().substring(0, 50)
 ```
 
-### Rate Limiting
+### Rate Limiting & External API Safety
 ```javascript
 // Protect all API endpoints
 const limiter = rateLimit({
@@ -352,6 +352,13 @@ const strictLimiter = rateLimit({
 app.use('/api/login', strictLimiter)
 app.use('/api/register', strictLimiter)
 ```
+
+**External API Safety (MANDATORY):**
+- Exponential backoff on 429/5xx: 1s→2s→4s→8s, max 3-5 retries
+- Never loop without throttling; never call batch endpoints in a loop
+- Log rate limit headers; read API docs before writing integration
+- Circuit breaker after 3 consecutive external API failures
+- Audit that all outbound API calls respect these rules
 
 ### CORS Configuration
 ```javascript
