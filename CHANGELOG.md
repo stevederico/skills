@@ -1,3 +1,7 @@
+1.8.0
+
+  Add tdd and code-review skills
+
 1.7.0
 
   Add arch-docs skill
