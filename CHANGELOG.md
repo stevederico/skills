@@ -1,3 +1,8 @@
+1.9.0
+
+  Slim subagents to invoke skills
+  Single source of truth in SKILL.md
+
 1.8.0
 
   Add tdd and code-review skills
