@@ -1,3 +1,9 @@
+1.3.0
+
+  Add code-optimizer subagent
+  Add design-vercel-shadcn subagent
+  Update design agent Tailwind v4 a11y
+
 1.2.0
 
   Move subagents into subagents folder
