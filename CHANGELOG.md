@@ -1,3 +1,9 @@
+2.3.0
+
+  Expand skateboard skill coverage
+  Add boilerplate and backend patterns
+  Rename skateboard-ui to skateboard
+
 2.2.0
 
   Add skateboard-ui skill

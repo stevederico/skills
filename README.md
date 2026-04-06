@@ -33,6 +33,7 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | sd-loop | Autonomous loop — re-feeds prompt until done | [sd-loop/](sd-loop) | — |
 | sd-loop-cancel | Cancel active loop | [sd-loop-cancel/](sd-loop-cancel) | — |
 | code-count | Token counting and API cost estimation | [code-count/](code-count) | — |
+| skateboard | Skateboard boilerplate + skateboard-ui patterns | [skateboard/](skateboard) | — |
 
 ## Usage
 
@@ -89,6 +90,8 @@ Claude Code auto-selects the right agent based on your request. Ask to "build a 
 **SD Loop**: Autonomous task runner. Feeds a prompt in a loop until completion or max iterations. Defaults to reading SPEC.md and implementing everything in it.
 
 **Code Count**: Parses Claude Code JSONL transcripts to report token usage, estimated API cost, daily breakdown charts, and per-project breakdowns.
+
+**Skateboard**: Complete guide for building apps with the Skateboard boilerplate and skateboard-ui component library. Covers scaffolding, Application Shell Architecture, constants.json config, routing, styling with semantic tokens, 25+ shadcn component mappings, Hono backend patterns, database adapters, and 6 rule files for styling, composition, forms, icons, guidelines, and views.
 
 ## Related Projects
 
