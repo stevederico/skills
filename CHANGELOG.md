@@ -1,3 +1,8 @@
+1.5.0
+
+  Move skills to project root
+  Update README
+
 1.4.0
 
   Sync all skills.sh with current standards
