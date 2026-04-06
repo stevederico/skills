@@ -71,6 +71,10 @@ Claude Code auto-selects the right agent based on your request. Ask to "build a 
 
 **Design**: Creates minimalist, modern design systems inspired by Vercel and shadcn/ui with Tailwind CSS v4, semantic tokens, Lucide icons, and accessibility-first principles.
 
+## Related Projects
+
+- [AGENTS.md](https://github.com/stevederico/agents-md) — Prompts for writing code with LLMs, Deno, Vite, React 19+
+
 ## Companion Skills
 
 Standalone skills that pair well with this collection:
