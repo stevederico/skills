@@ -3,6 +3,7 @@ name: deployer
 description: Railway platform deployment with optimal configuration and troubleshooting
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Railway Deployment Skill

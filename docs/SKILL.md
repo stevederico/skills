@@ -3,6 +3,7 @@ name: docs
 description: API documentation writing in Stripe's style with complete examples
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Documentation Skill

@@ -3,6 +3,7 @@ name: frontend
 description: React 19 + Tailwind CSS + Vite development with native-first approach
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Frontend Development Skill

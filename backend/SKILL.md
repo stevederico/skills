@@ -3,6 +3,7 @@ name: backend
 description: Node.js/Hono backend development with native-first approach
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Backend Development Skill

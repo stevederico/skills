@@ -3,6 +3,7 @@ name: debug
 description: Systematic error investigation and troubleshooting for React and Node.js
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Debug Skill

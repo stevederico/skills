@@ -3,6 +3,7 @@ name: redteam
 description: Challenge decisions with direct counter-arguments and expose trade-offs
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Red Team Skill

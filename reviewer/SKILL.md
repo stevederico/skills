@@ -3,6 +3,7 @@ name: reviewer
 description: Code review including refactoring, performance optimization, and best practices
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Code Reviewer Skill

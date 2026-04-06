@@ -3,6 +3,7 @@ name: security
 description: OWASP Top 10 vulnerability detection and secure coding practices
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Security Skill

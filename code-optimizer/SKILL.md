@@ -3,6 +3,7 @@ name: code-optimizer
 description: "Reduce code complexity, eliminate dead code, consolidate duplicate logic"
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Code Optimizer Skill

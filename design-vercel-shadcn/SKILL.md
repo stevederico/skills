@@ -3,6 +3,7 @@ name: design-vercel-shadcn
 description: "Minimalist design systems inspired by Vercel and shadcn/ui"
 license: MIT
 version: 1.0.0
+author: stevederico
 ---
 
 # Design Vercel/shadcn Skill

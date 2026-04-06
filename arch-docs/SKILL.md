@@ -7,6 +7,7 @@ description: >
   "I forgot how X works", "walk me through".
 allowed-tools: Read, Glob, Grep
 metadata:
+  author: stevederico
   version: "1.1.0"
   argument-hint: <subsystem> or "question"
 ---
