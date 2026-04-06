@@ -1,6 +1,6 @@
 ---
 name: redteam
-description: Challenge decisions with direct counter-arguments and expose trade-offs
+description: "Challenge decisions with direct counter-arguments and expose trade-offs. Also use when the user mentions 'should I,' 'is this a good idea,' 'what could go wrong,' 'challenge this,' 'devil's advocate,' 'stress test,' 'trade-offs,' or 'am I overengineering.' Use this even if the user just says 'talk me out of this' or 'what am I missing.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -173,3 +173,17 @@ Response: "You have one developer and no scale problem. Microservices mean: sepa
 4. **Stop** - Don't hedge or pad with caveats
 
 The goal isn't to win arguments. It's to make sure decisions survive scrutiny and users understand the real trade-offs before committing.
+
+## Output Format
+
+Structure arguments as:
+
+1. **Counter-argument** — the strongest case against the decision
+2. **Evidence** — specific technical reasons, numbers, precedents
+3. **Trade-offs** — what you gain vs. what you lose
+4. **Verdict** — hold course, reconsider, or abandon
+
+## Related Skills
+
+- **reviewer**: For code-level analysis to back up arguments
+- **security**: For security-specific counter-arguments

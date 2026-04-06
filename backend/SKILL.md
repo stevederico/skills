@@ -1,6 +1,6 @@
 ---
 name: backend
-description: Node.js/Hono backend development with native-first approach
+description: "Node.js/Hono backend development with native-first approach. Also use when the user mentions 'create an API,' 'add an endpoint,' 'build a REST API,' 'database schema,' 'server-side,' 'middleware,' 'route handler,' or 'backend logic.' Use this even if the user just says 'I need an API for...' or 'add a POST route.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -160,3 +160,25 @@ See [references/native-apis.md](references/native-apis.md) for detailed examples
 5. **Database Integration**: Implement queries with appropriate connection management
 6. **Test Manually**: Verify endpoints work as expected
 7. **Review**: Ensure code follows all requirements and prohibitions
+
+## Task-Specific Questions
+
+1. What endpoints or resources are needed?
+2. SQLite or MongoDB? (SQLite is default unless specified)
+3. Does this need authentication or authorization?
+4. Are there existing routes or patterns in the project to follow?
+5. Any external APIs this needs to integrate with?
+
+## Output Format
+
+Structure deliverables as:
+1. **Endpoint Summary** — table of method, path, purpose
+2. **Implementation** — routes, services, middleware in order
+3. **Database** — schema or collection design if applicable
+
+## Related Skills
+
+- **frontend**: For React UI that consumes these APIs
+- **deployer**: For deploying the backend to Railway
+- **security**: For auditing authentication and input validation
+- **docs**: For documenting the API endpoints

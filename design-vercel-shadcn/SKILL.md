@@ -1,6 +1,6 @@
 ---
 name: design-vercel-shadcn
-description: "Minimalist design systems inspired by Vercel and shadcn/ui"
+description: "Minimalist design systems inspired by Vercel and shadcn/ui. Also use when the user mentions 'design system,' 'logo,' 'landing page design,' 'UI design,' 'visual direction,' 'color palette,' 'typography,' 'component design,' 'dark mode design,' or 'make it look like Vercel.' Use this even if the user just says 'design this' or 'it needs a visual refresh.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -206,3 +206,27 @@ After designing:
 **[DS-X05] Never use `transition-all`; specify exact properties**
 **[DS-X06] Never use Tailwind CDN in production**
 **[DS-X07] Never skip dark mode; design both modes simultaneously**
+
+## Task-Specific Questions
+
+Before starting, ask:
+
+1. Logo, component, or full page design?
+2. Do brand colors or fonts already exist?
+3. Is dark mode required?
+4. What's the target audience?
+5. Any reference sites or designs to match?
+
+## Output Format
+
+Structure deliverables as:
+
+1. **Design Spec** — color codes, typography choices, spacing scale
+2. **Component Breakdown** — visual hierarchy and Tailwind classes
+3. **Dark Mode Variations** — both themes specified
+4. **Accessibility** — contrast ratios, touch targets verified
+
+## Related Skills
+
+- **frontend**: For implementing the design in React/Tailwind
+- **reviewer**: For reviewing the implementation against the spec

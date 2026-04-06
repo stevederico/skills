@@ -1,6 +1,6 @@
 ---
 name: reviewer
-description: Code review including refactoring, performance optimization, and best practices
+description: "Code review including refactoring, performance optimization, and best practices. Also use when the user mentions 'review this,' 'code quality,' 'refactor,' 'too slow,' 're-renders,' 'duplicated code,' 'clean up,' 'best practices,' 'accessibility audit,' or 'performance issues.' Use this even if the user just says 'can you review this?' or 'this code feels messy.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -293,3 +293,27 @@ See [references/refactoring-patterns.md](references/refactoring-patterns.md) for
 - Performance optimization techniques
 - Common code smell patterns
 - Before/after comparisons
+
+## Task-Specific Questions
+
+1. Full review or a specific concern (performance, accessibility, duplication)?
+2. Any known performance issues or slow areas?
+3. Should accessibility be a focus of this review?
+4. Are there specific files or components to prioritize?
+5. Is this pre-merge review or general cleanup?
+
+## Output Format
+
+Structure reviews as:
+1. **Summary** — one-line overall assessment
+2. **Critical Issues** — must fix, with file:line and suggested fix
+3. **Improvements** — should fix, with file:line and suggested fix
+4. **Suggestions** — nice to have
+5. **Positive Notes** — what's done well
+
+## Related Skills
+
+- **code-optimizer**: For deeper dead code elimination and consolidation
+- **security**: For security-specific review
+- **frontend**: For implementing suggested UI improvements
+- **backend**: For implementing suggested API improvements

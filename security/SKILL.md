@@ -1,6 +1,6 @@
 ---
 name: security
-description: OWASP Top 10 vulnerability detection and secure coding practices
+description: "OWASP Top 10 vulnerability detection and secure coding practices. Also use when the user mentions 'security audit,' 'vulnerability,' 'XSS,' 'SQL injection,' 'authentication,' 'authorization,' 'CSRF,' 'secrets,' 'hardcoded credentials,' 'input validation,' or 'penetration test.' Use this even if the user just says 'is this secure?' or 'check for vulnerabilities.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -299,3 +299,29 @@ See [references/owasp-top-10.md](references/owasp-top-10.md) for:
 - Attack scenarios and mitigations
 - Code examples for each vulnerability type
 - Security testing techniques
+
+## Task-Specific Questions
+
+1. Full security audit or a specific concern?
+2. Does this app have authentication? What method (JWT, sessions, OAuth)?
+3. Are there external API integrations to audit?
+4. Are there user-facing forms or file uploads?
+5. Is this deployed or pre-deployment review?
+
+## Output Format
+
+Structure findings as a severity-sorted table:
+
+| Severity | Issue | Location | Impact | Fix |
+|----------|-------|----------|--------|-----|
+| Critical | ... | file:line | ... | ... |
+| High | ... | file:line | ... | ... |
+
+Then: Prioritized Action Plan (critical fixes -> high-impact -> quick wins -> long-term)
+
+## Related Skills
+
+- **backend**: For fixing server-side vulnerabilities
+- **frontend**: For fixing client-side vulnerabilities (XSS, CSP)
+- **reviewer**: For general code quality review alongside security
+- **deployer**: For verifying production security configuration

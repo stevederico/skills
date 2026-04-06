@@ -214,3 +214,9 @@ When you make significant changes to the codebase:
 1. Update `docs/ARCHITECTURE.md` with structural changes
 2. Update `docs/DECISIONS.md` with new architectural decisions
 3. These become the canonical reference for future `/arch-docs` calls
+
+## Related Skills
+
+- **frontend**: For understanding React component architecture
+- **backend**: For understanding API and database architecture
+- **security**: For understanding security architecture decisions

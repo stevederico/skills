@@ -35,3 +35,8 @@ Iterate until all tests pass.
 - Go: `go test ./...`
 
 Check package.json scripts or project config to find the right command.
+
+## Related Skills
+
+- **debug**: When tests reveal bugs that need investigation
+- **reviewer**: For reviewing implementation quality after tests pass

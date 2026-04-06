@@ -1,6 +1,6 @@
 ---
 name: deployer
-description: Railway platform deployment with optimal configuration and troubleshooting
+description: "Railway platform deployment with optimal configuration and troubleshooting. Also use when the user mentions 'deploy,' 'railway,' 'push to production,' 'environment variables,' 'deployment failed,' 'build error,' 'railway logs,' 'custom domain,' or 'database provisioning.' Use this even if the user just says 'ship it' or 'get it live.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -224,3 +224,23 @@ See [references/railway-commands.md](references/railway-commands.md) for:
 - Troubleshooting guides
 - Configuration examples
 - Best practices
+
+## Task-Specific Questions
+
+1. First deploy or updating an existing service?
+2. Which Railway service should this deploy to?
+3. Are all environment variables configured?
+4. Does this need a custom domain?
+5. Is there a Dockerfile or should Nixpacks handle the build?
+
+## Output Format
+
+Structure deployments as:
+1. **Pre-Deploy Checklist** — env vars, build verification, service link
+2. **Deploy** — `railway up` output and build logs
+3. **Verification** — production URL check with `curl -A "Claude-Agent"`
+
+## Related Skills
+
+- **backend**: For the server code being deployed
+- **security**: For verifying no secrets are exposed in the build

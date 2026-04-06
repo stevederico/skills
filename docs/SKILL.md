@@ -1,6 +1,6 @@
 ---
 name: docs
-description: API documentation writing in Stripe's style with complete examples
+description: "API documentation writing in Stripe's style with complete examples. Also use when the user mentions 'document this,' 'API docs,' 'add examples,' 'endpoint documentation,' 'request/response examples,' 'README,' or 'how to use this.' Use this even if the user just says 'this needs docs' or 'document the API.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -226,3 +226,25 @@ curl -X POST https://api.example.com/users \
 5. **Polish** - Refine language for maximum clarity
 
 Always ask: "If I were integrating this for the first time, would this documentation give me everything I need to succeed quickly?"
+
+## Task-Specific Questions
+
+1. Which endpoints or functions need documentation?
+2. Is authentication required for these endpoints?
+3. What format — Stripe-style markdown, OpenAPI/Swagger, or inline JSDoc?
+4. Who is the audience — internal developers, external API consumers, or both?
+5. Are there existing docs to update or is this from scratch?
+
+## Output Format
+
+For each endpoint:
+1. **Overview** — one-sentence description, when to use it
+2. **Endpoint** — method, path, auth requirements
+3. **Request** — full example with all parameters
+4. **Response** — success and error examples
+5. **Code Example** — curl and JavaScript fetch
+
+## Related Skills
+
+- **backend**: For understanding the API implementation
+- **frontend**: For documenting component APIs and props

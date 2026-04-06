@@ -1,6 +1,6 @@
 ---
 name: code-optimizer
-description: "Reduce code complexity, eliminate dead code, consolidate duplicate logic"
+description: "Reduce code complexity, eliminate dead code, consolidate duplicate logic. Also use when the user mentions 'dead code,' 'unused functions,' 'duplicated logic,' 'too complex,' 'simplify this,' 'consolidate,' 'reduce bundle size,' 'clean up,' or 'refactor for maintainability.' Use this even if the user just says 'this feels bloated' or 'there must be dead code in here.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -171,3 +171,27 @@ After optimizing:
 **[CO-X03] Never over-abstract** - Simple code should stay simple; don't create complex utilities for one-off logic
 **[CO-X04] Never optimize without context** - Understand the full codebase before making sweeping changes
 **[CO-X05] Never change public API signatures** - External consumers depend on existing interfaces
+
+## Task-Specific Questions
+
+1. Target specific files/directories or scan the whole project?
+2. Should the public API (exports, function signatures) be preserved?
+3. Any known dead code or unused features?
+4. Are there performance concerns driving this optimization?
+5. Is this post-feature cleanup or proactive maintenance?
+
+## Output Format
+
+For each optimization:
+
+| What | Why | Before | After | Risk |
+|------|-----|--------|-------|------|
+| Change description | Benefit | Code snippet | Code snippet | Low/Med/High |
+
+Then: Summary of total lines removed, files changed, and risk assessment.
+
+## Related Skills
+
+- **reviewer**: For broader code quality review
+- **frontend**: For implementing component-level optimizations
+- **backend**: For implementing server-side optimizations

@@ -1,6 +1,6 @@
 ---
 name: debug
-description: Systematic error investigation and troubleshooting for React and Node.js
+description: "Systematic error investigation and troubleshooting for React and Node.js. Also use when the user mentions 'error,' 'bug,' 'broken,' 'not working,' 'crash,' 'stack trace,' 'console error,' 'white screen,' 'infinite loop,' 'network error,' or '500 error.' Use this even if the user just says 'something is wrong' or 'it broke.'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -160,3 +160,26 @@ See [references/debugging-guide.md](references/debugging-guide.md) for:
 - React-specific debugging patterns
 - Network debugging techniques
 - Common pitfalls and solutions
+
+## Task-Specific Questions
+
+1. What is the exact error message or unexpected behavior?
+2. When did it start? Any recent changes?
+3. Can you reproduce it consistently?
+4. Is this a frontend (browser), backend (server), or network issue?
+5. What have you already tried?
+
+## Output Format
+
+Structure findings as:
+1. **Root Cause** — what is actually wrong
+2. **Evidence** — stack trace, logs, or reproduction steps that prove it
+3. **Fix** — specific code changes with file:line references
+4. **Verification** — how to confirm the fix works
+
+## Related Skills
+
+- **frontend**: If the bug is in a React component
+- **backend**: If the bug is in an API endpoint
+- **reviewer**: For reviewing the fix for quality
+- **security**: If the bug has security implications

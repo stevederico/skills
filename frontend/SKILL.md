@@ -1,6 +1,6 @@
 ---
 name: frontend
-description: React 19 + Tailwind CSS + Vite development with native-first approach
+description: "React 19 + Tailwind CSS v4 + Vite 7.1 frontend development. Also use when the user mentions 'build a component,' 'add a page,' 'fix the UI,' 'responsive layout,' 'form validation,' 'dark mode,' 'styling,' 'Tailwind,' 'shadcn,' or 'user interface.' Use this even if the user just says 'make it look better' or 'add a button that...'"
 license: MIT
 version: 1.0.0
 author: stevederico
@@ -241,3 +241,24 @@ See [references/native-alternatives.md](references/native-alternatives.md) for:
 3. **Build Incrementally** - Start with basic structure, add state, add styling, add validation
 4. **Verify Quality** - Test interactivity, responsive behavior, dark mode, accessibility
 5. **Optimize** - Remove unnecessary code, ensure efficient re-renders
+
+## Task-Specific Questions
+
+1. New component or modifying an existing one?
+2. Does this need dark mode support?
+3. Mobile-first or desktop-focused?
+4. Any specific shadcn/ui components to use?
+5. Is there an existing design or mockup to match?
+
+## Output Format
+
+Structure deliverables as:
+1. **Component Hierarchy** — parent/child structure if multiple components
+2. **Implementation** — component code with Tailwind styling
+3. **Verification** — responsive behavior, dark mode, accessibility checks
+
+## Related Skills
+
+- **backend**: For API endpoints the frontend consumes
+- **design-vercel-shadcn**: For design system decisions and visual direction
+- **reviewer**: For code review and performance optimization
