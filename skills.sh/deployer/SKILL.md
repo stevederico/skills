@@ -28,23 +28,30 @@ Do NOT use when:
 
 | Priority | Category | Rules |
 |----------|----------|-------|
-| CRITICAL | Deployment Verification | RD01-RD02 |
-| HIGH | Configuration | RD03-RD06 |
-| MEDIUM | CLI Operations | RD07-RD09 |
-| LOW | Optimization | RD10-RD11 |
+| CRITICAL | Deployment Method & Verification | RD01-RD04 |
+| HIGH | Configuration | RD05-RD08 |
+| MEDIUM | CLI Operations | RD09-RD11 |
+| LOW | Optimization | RD12-RD13 |
 
 ## Core Principles
 
 ### Priority: CRITICAL
 
-**[RD01] Never Say "Deployed" Until Verified**
-- After `railway up`, ALWAYS check logs with `railway logs --lines 10`
-- Verify server started successfully before telling user
+**[RD01] Always Use CLI Push Deployment**
+- Always use `railway up` (CLI push). Never use git-based deployment.
+- Workflow: `cd ~/Desktop/projects/<project> && railway service link <service-name> && railway up 2>&1`
+
+**[RD02] Never Sleep After Deploy**
+- NEVER `sleep` after `railway up`. It streams build logs to stdout — run in foreground, wait to complete, then verify production URL.
+- If deploy needs propagation time, retry `curl` 3-5 times with 5s gaps — never blind sleep.
+
+**[RD03] Verify Production with Correct User-Agent**
+- After deploy, verify production with `curl -s -A "Claude-Agent"` (Cloudflare blocks default curl UA)
+- `railway logs` uses `-n` for line count, not `--limit`
 - Check for startup errors, port binding, database connections
-- Confirm the service is actually responding to requests
 - Deployment is NOT complete until service is confirmed running
 
-**[RD02] Dockerfile Deployment Preferred**
+**[RD04] Dockerfile Deployment Preferred**
 - Always prefer Dockerfile over Nixpacks for full control
 - Use Deno image (denoland/deno:2.1.4) when possible
 - Fall back to Node.js 22+ when Deno won't work
@@ -52,20 +59,20 @@ Do NOT use when:
 
 ### Priority: HIGH
 
-**[RD03] Environment Variables**
+**[RD05] Environment Variables**
 - Set all required env vars BEFORE deployment
 - Use `railway variables --set "KEY=value"`
 - Never commit secrets to version control
 - Verify PORT variable works with Railway's automatic assignment
 - Required backend vars: JWT_SECRET, STRIPE_KEY, NODE_ENV=production
 
-**[RD04] Single-Origin Deployment**
+**[RD06] Single-Origin Deployment**
 - For combined frontend+backend, set `backendURL: ""` in constants.json
 - This makes frontend use same-origin requests (avoids CORS issues)
 - Prevents CSP violations like "connect-src 'self'"
 - Use `devBackendURL` for local development
 
-**[RD05] Node.js Version Configuration**
+**[RD07] Node.js Version Configuration**
 - Railway's Nixpacks defaults to Node 18 (often too old)
 - For Node 22+, add to package.json:
 ```json
@@ -78,7 +85,7 @@ Do NOT use when:
 - Or create `.node-version` file with: `22`
 - Or set `NIXPACKS_NODE_VERSION=22` environment variable
 
-**[RD06] CORS Configuration**
+**[RD08] CORS Configuration**
 - Verify CORS allows the frontend domain
 - For single-origin, CORS not needed
 - For separate services, set origin to exact frontend URL
@@ -86,25 +93,25 @@ Do NOT use when:
 
 ### Priority: MEDIUM
 
-**[RD07] Railway CLI Commands**
+**[RD09] Railway CLI Commands**
 - `railway init` - Create new project
 - `railway link` - Link to existing project
 - `railway up` - Deploy current directory
 - `railway logs` - Stream live logs
-- `railway logs --lines 100` - Last 100 log lines
+- `railway logs -n 100` - Last 100 log lines
 - `railway variables` - List all variables
 - `railway variables --set "KEY=value"` - Set variable
 - `railway domain` - Generate Railway domain
 - `railway status` - Show deployment status
 
-**[RD08] Database Provisioning**
+**[RD10] Database Provisioning**
 - `railway add --database postgres` - Add PostgreSQL
 - `railway add --database mysql` - Add MySQL
 - `railway add --database redis` - Add Redis
 - `railway add --database mongo` - Add MongoDB
 - Railway auto-injects connection variables like `DATABASE_URL`
 
-**[RD09] Troubleshooting Workflow**
+**[RD11] Troubleshooting Workflow**
 1. Check build logs: `railway logs --build`
 2. Check deployment logs: `railway logs --deployment`
 3. Check live logs: `railway logs`
@@ -113,13 +120,13 @@ Do NOT use when:
 
 ### Priority: LOW
 
-**[RD10] Monorepo Strategy**
+**[RD12] Monorepo Strategy**
 - Set root directory in Railway or use railway.json
 - For backend: Set start command to `node server.js`
 - For frontend: Set build command and output directory
 - Consider single service serving both (backend serves frontend build)
 
-**[RD11] SQLite Consideration**
+**[RD13] SQLite Consideration**
 - Railway uses ephemeral storage for SQLite
 - Recommend switching to PostgreSQL for production persistence
 - Add PostgreSQL with: `railway add --database postgres`
@@ -169,7 +176,7 @@ CMD ["node", "--experimental-sqlite", "backend/server.js"]
 3. Initialize: `railway init`
 4. Set environment variables: `railway variables --set "KEY=value"`
 5. Deploy: `railway up`
-6. **CRITICAL: Verify with logs**: `railway logs --lines 10`
+6. **CRITICAL: Verify with logs**: `railway logs -n 10`
 7. Generate domain: `railway domain`
 
 ### Existing Projects:
@@ -177,7 +184,7 @@ CMD ["node", "--experimental-sqlite", "backend/server.js"]
 2. Check status: `railway status`
 3. Update variables if needed
 4. Deploy: `railway up`
-5. **CRITICAL: Verify with logs**: `railway logs --lines 10`
+5. **CRITICAL: Verify with logs**: `railway logs -n 10`
 
 ## Common Issues
 

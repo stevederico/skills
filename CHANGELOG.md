@@ -1,3 +1,13 @@
+1.4.0
+
+  Sync all skills.sh with current standards
+  Add code-optimizer design-vercel-shadcn skills
+  Backend Express to Hono in skills.sh
+  Frontend Vite 7.1 a11y images in skills.sh
+  Deployer Railway deploy rules in skills.sh
+  Security rate limiting circuit breaker
+  Reviewer accessibility to HIGH priority
+
 1.3.0
 
   Add code-optimizer subagent

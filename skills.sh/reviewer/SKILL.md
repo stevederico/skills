@@ -30,8 +30,10 @@ Do NOT use when:
 |----------|----------|-------|
 | CRITICAL | Code Smells | CR01-CR04 |
 | HIGH | Refactoring Techniques | CR05-CR08 |
+| HIGH | Accessibility | CR14 |
+| HIGH | Image Optimization | CR17 |
 | MEDIUM | Performance | CR09-CR12 |
-| LOW | Best Practices | CR13-CR16 |
+| LOW | Best Practices | CR13, CR15-CR16 |
 
 ## Core Principles
 
@@ -116,6 +118,32 @@ Do NOT use when:
 - Use item.id or similar unique identifier
 - Consider virtualization for 100+ item lists (pagination/infinite scroll)
 
+### Priority: HIGH
+
+**[CR14] Accessibility Checks (MANDATORY)**
+- [ ] Every page has a `<main>` landmark
+- [ ] Semantic `<header>`, `<footer>`, `<nav>` used correctly
+- [ ] `<Label>` connected via `htmlFor`/`id` on all form inputs
+- [ ] `aria-label` on all icon-only buttons
+- [ ] Escape key closes modals
+- [ ] Focus trapping in dialogs (focus stays within modal while open)
+- [ ] WCAG 2.1 AA contrast ratios met
+- [ ] Dark backgrounds use `text-slate-400` minimum (not `text-slate-500`/`600`)
+- [ ] Honor `prefers-reduced-motion` (disable/reduce animations)
+- [ ] All images have meaningful alt text
+- [ ] Buttons/links have descriptive text
+- [ ] Color not the only indicator (use icons/text too)
+- [ ] Interactive elements keyboard accessible
+- [ ] Focus states visible
+- [ ] Heading hierarchy logical (h1 → h2 → h3)
+
+**[CR17] Image Optimization (MANDATORY)**
+- [ ] Serve WebP with `<picture>` fallback to PNG/JPG for older browsers
+- [ ] Explicit `width`/`height` attributes on all `<img>` (prevents CLS)
+- [ ] Size images to 2x display size max (e.g., 176px display → 352px file)
+- [ ] Meaningful `alt` text on every image
+- [ ] Compress aggressively (`cwebp -q 85` for WebP; `sips -z` to resize on macOS)
+
 ### Priority: LOW
 
 **[CR13] Consistency Checklist**
@@ -124,15 +152,6 @@ Do NOT use when:
 - [ ] Constants use UPPER_SNAKE_CASE (API_URL, MAX_RETRIES)
 - [ ] Boolean variables start with is/has/can (isActive, hasError)
 - [ ] Event handlers prefixed with handle (handleSubmit, handleChange)
-
-**[CR14] Accessibility Checks**
-- [ ] All images have alt text
-- [ ] Form inputs have associated labels
-- [ ] Buttons/links have descriptive text
-- [ ] Color not the only indicator (use icons/text too)
-- [ ] Interactive elements keyboard accessible
-- [ ] Focus states visible
-- [ ] Heading hierarchy logical (h1 → h2 → h3)
 
 **[CR15] Mobile Responsiveness**
 - [ ] Touch targets minimum 44x44px

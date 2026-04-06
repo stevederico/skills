@@ -7,7 +7,7 @@ version: 1.0.0
 
 # Frontend Development Skill
 
-Expert frontend engineer specializing in modern React development with clean, maintainable component architecture using React 19+, Vite 6.1.0+, and Tailwind CSS v4+.
+Expert frontend engineer specializing in modern React development with clean, maintainable component architecture using React 19+, Vite 7.1+, and Tailwind CSS v4+.
 
 ## When to Use This Skill
 
@@ -31,8 +31,8 @@ Do NOT use when:
 |----------|----------|-------|
 | CRITICAL | React & Architecture | F01-F04 |
 | HIGH | Tailwind & Styling | F05-F08 |
+| HIGH | Accessibility | F12-F14 |
 | MEDIUM | Performance | F09-F11 |
-| LOW | Accessibility | F12-F14 |
 
 ## Core Principles
 
@@ -40,11 +40,13 @@ Do NOT use when:
 
 **[F01] Modern React Stack**
 - Always use React 19 or newer with functional components and hooks
-- Always use Vite 6.1.0+ as build tool
-- Always use react-router-dom v7.2.0+ for routing
+- Always use Vite 7.1+ as build tool
+- Always use react-router-dom v7.9+ for routing
 - Always use JavaScript (never TypeScript)
 - Always use ES modules (import/export syntax)
 - Never use require() for imports
+- Use Deno for package management (never `npm install`)
+- Kill port 5173 if occupied before starting dev server
 
 **[F02] Native-First Development**
 - Check if native browser APIs can accomplish the task before adding packages
@@ -66,17 +68,21 @@ Do NOT use when:
 - Add `@import "tailwindcss"` to index.css
 - Use @tailwindcss/vite plugin
 - Style using utility classes directly on elements
-- Support dark mode with bg-background and bg-accent
+- Use semantic tokens (`bg-background`, `text-foreground`) — never raw colors or `dark:` overrides
 - Never use postcss, autoprefixer, or tailwind.config.js
+- Never use Tailwind CDN (`cdn.tailwindcss.com`) in production — it compiles in-browser
 
 ### Priority: HIGH
 
 **[F05] Styling Approach**
 - Apply utility classes directly to JSX elements
-- Use responsive prefixes (sm:, md:, lg:, xl:, 2xl:)
+- Use responsive prefixes mobile-first (sm:, md:, lg:, xl:, 2xl:)
 - Use state variants (hover:, focus:, active:, disabled:)
-- Use dark: prefix for dark mode styles
-- Create consistent spacing using Tailwind's scale
+- Use `gap-*` not `space-*`; `size-*` for squares; `rounded-md/lg` from tokens
+- Use `text-balance`/`text-pretty` on headings
+- Use specific transitions not `transition-all`
+- No decorative blobs; max 3-5 semantic colors; max 2 font families
+- Scale values not arbitrary; `cn()` for conditionals
 
 **[F06] Dark Mode Support**
 - Always include dark mode variants for backgrounds, text, borders
@@ -98,6 +104,16 @@ Do NOT use when:
 - Create custom hooks for reusable stateful logic (prefix with 'use')
 - Keep state close to where it's used
 
+**[F08a] Icons**
+- Use Lucide React for all icons; no emoji as icons
+- Add `aria-label` on icon-only buttons
+- Icon sizes: 16/18/24/48px only
+
+**[F08b] UI Components**
+- If `@stevederico/skateboard-ui` is installed, import from `@stevederico/skateboard-ui/shadcn/ui/<component>`
+- Read component source before first use; use compound patterns not prop APIs
+- Use `<Button>` not `<button>`, `<Dialog>` not custom div, `toast()` not `alert()`
+
 ### Priority: MEDIUM
 
 **[F09] Performance - Avoid Unnecessary Re-renders**
@@ -116,13 +132,15 @@ Do NOT use when:
 - Use item.id or similar unique identifier
 - Consider virtualization for 100+ item lists
 
-### Priority: LOW
+### Priority: HIGH
 
-**[F12] Semantic HTML**
+**[F12] Semantic HTML & Landmarks**
 - Use proper heading hierarchy (h1-h6)
-- Use semantic elements (nav, main, article, aside)
-- Add ARIA labels where needed
-- Ensure form inputs have associated labels
+- Use semantic elements (`<nav>`, `<main>`, `<article>`, `<aside>`, `<header>`, `<footer>`)
+- Every page needs a `<main>` landmark
+- Use `<Label>` via `htmlFor`/`id` for form inputs
+- Add `aria-label` on icon-only buttons
+- Escape closes modals; implement focus trapping
 
 **[F13] Keyboard Navigation**
 - All interactive elements must be keyboard accessible
@@ -130,11 +148,13 @@ Do NOT use when:
 - Logical tab order
 - Support common keyboard shortcuts
 
-**[F14] Color & Contrast**
+**[F14] Color & Contrast (WCAG 2.1 AA)**
 - Minimum 4.5:1 contrast ratio for normal text
 - Minimum 3:1 contrast ratio for large text
+- Dark backgrounds: `text-slate-400` minimum for body text (not `text-slate-500`/`600`)
 - Don't rely solely on color to convey information
 - Test contrast in both light and dark modes
+- Honor `prefers-reduced-motion`
 
 ## Form Handling
 
@@ -146,14 +166,21 @@ Do NOT use when:
 - Clear validation errors when users correct inputs
 - Use appropriate input types (email, tel, number)
 
+## Images (MANDATORY)
+
+**[F16] Image Best Practices**
+- Always serve WebP with `<picture>` fallback to PNG/JPG for older browsers
+- Explicit `width`/`height` attributes on all `<img>` to prevent layout shift (CLS)
+- Size images to 2x display size max (e.g., 176px display = 352px file), not larger
+- Meaningful `alt` text on all images
+
 ## Prohibited Practices
 
 **[F-X01] Never use TypeScript** - JavaScript only
 **[F-X02] Never use ESLint** - No ESLint packages or globals package
-**[F-X03] Never add unit tests** - Not within scope
-**[F-X04] Never use @types packages** - No TypeScript types
-**[F-X05] Never run delete/move commands** - File safety
-**[F-X06] Never use postcss or tailwind.config.js** - Tailwind v4 doesn't need them
+**[F-X03] Never use @types packages** - No TypeScript types
+**[F-X04] Never run delete/move commands** - File safety
+**[F-X05] Never use postcss or tailwind.config.js** - Tailwind v4 doesn't need them
 
 ## Native Alternatives Reference
 

@@ -1,18 +1,18 @@
 ---
 name: backend
-description: Node.js/Express backend development with native-first approach
+description: Node.js/Hono backend development with native-first approach
 license: MIT
 version: 1.0.0
 ---
 
 # Backend Development Skill
 
-Expert Node.js backend engineering with Express.js, focusing on clean, component-based architecture with minimal dependencies.
+Expert Node.js backend engineering with Hono, focusing on clean, component-based architecture with minimal dependencies.
 
 ## When to Use This Skill
 
 Activate this skill when:
-- Creating or modifying Node.js backend code with Express
+- Creating or modifying Node.js backend code with Hono
 - Building REST APIs
 - Implementing database operations (SQLite/MongoDB)
 - Structuring backend components
@@ -31,7 +31,7 @@ Do NOT use when:
 | CRITICAL | Native-First Development | B01-B03 |
 | HIGH | Database & API Design | B04-B06 |
 | MEDIUM | Runtime & Security | B07-B08 |
-| LOW | Code Organization | B09-B10 |
+| LOW | Code Organization | B09-B12 |
 
 ## Core Principles
 
@@ -82,9 +82,10 @@ Do NOT use when:
 
 **[B07] Runtime & Package Management**
 - Use Deno v2.2+ for package management
-- Install packages with: `deno install npm:package-name`
+- Install packages with: `deno install` (never `npm install`)
 - Run with: `deno run start` or `deno run dev`
 - Always run `deno install` before starting the server
+- Kill port 8000 if occupied before starting the server
 
 **[B08] Security Practices**
 - Store secrets in environment variables (never hardcode)
@@ -105,24 +106,38 @@ Do NOT use when:
 - One concern per module
 - Co-locate related functionality
 
+**[B11] External API Safety**
+- Exponential backoff on 429/5xx responses (1s, 2s, 4s, 8s — max 3-5 retries)
+- Never loop without throttling; never call batch endpoints in a loop
+- Circuit breaker after 3 consecutive external API failures
+- Log rate limit headers; read API docs before writing integration
+
+**[B12] Error Handling**
+- Handle errors at system boundaries; never swallow errors
+- Toast for transient errors, inline for forms, empty states for failed fetches
+- Human-readable messages with recovery actions
+- Loading indicators for operations >200ms
+- Graceful degradation when external services fail
+
 ## Prohibited Practices
 
 **[B-X01] Never use TypeScript** - Only vanilla JavaScript
 **[B-X02] Never use ESLint** - No ESLint packages or globals package
-**[B-X03] Never add unit tests** - Not within scope
+**[B-X03] Never use dotenv** - Use native env var loading
 **[B-X04] Never use `require()`** - ES modules only
 **[B-X05] Never install @types packages** - No TypeScript types
 **[B-X06] Never use Mongoose** - Use native MongoDB driver only
 **[B-X07] Never read .env files** - Security restriction
 **[B-X08] Never execute delete/move commands** - File safety
+**[B-X09] Never use axios** - Native fetch only
 
 ## When External Packages ARE Justified
 
 Only add packages when native Node.js truly cannot handle the task:
-- Complex validation (express-validator for comprehensive rules)
+- Complex validation (zod, valibot for comprehensive rules)
 - Database drivers (better-sqlite3, mongodb native driver)
 - Authentication (jsonwebtoken for JWT, bcrypt for password hashing)
-- Framework essentials (express middleware, body parsers)
+- Framework essentials (hono middleware)
 - Specialized tasks native APIs can't handle efficiently
 
 ## Native Alternatives Reference

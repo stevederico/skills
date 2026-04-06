@@ -32,9 +32,9 @@ Do NOT use when:
 | Priority | Category | Rules |
 |----------|----------|-------|
 | CRITICAL | Injection & XSS | S01-S04 |
-| HIGH | Authentication & Access | S05-S08 |
-| MEDIUM | Configuration & Secrets | S09-S12 |
-| LOW | Logging & Headers | S13-S16 |
+| HIGH | Authentication & Access, External API Safety | S05-S09 |
+| MEDIUM | Configuration & Secrets | S10-S13 |
+| LOW | Logging & Headers | S14-S17 |
 
 ## Core Principles
 
@@ -96,9 +96,16 @@ Do NOT use when:
 - Implement session timeout
 - Invalidate sessions on logout
 
+**[S09] External API Safety (MANDATORY)**
+- Respect rate limits; exponential backoff on 429/5xx (1s->2s->4s->8s, max 3-5 retries)
+- Never loop without throttling; never call batch endpoints in a loop
+- Log rate limit headers from responses
+- Circuit breaker after 3 consecutive external API failures
+- Read API docs before writing any integration
+
 ### Priority: MEDIUM
 
-**[S09] Secrets Management**
+**[S10] Secrets Management**
 - Never commit .env files to version control
 - Never hardcode API keys, tokens, or credentials
 - Store secrets in environment variables
@@ -106,13 +113,13 @@ Do NOT use when:
 - Rotate secrets regularly
 - Use different secrets per environment
 
-**[S10] File Restrictions - NEVER Read/Modify**
+**[S11] File Restrictions - NEVER Read/Modify**
 - `.env` files
 - Files matching `*/config/secrets.*`
 - Files with `.pem` extension
 - Any files containing API keys, tokens, or credentials
 
-**[S11] Security Headers Required**
+**[S12] Security Headers Required**
 ```javascript
 res.setHeader('X-Content-Type-Options', 'nosniff')
 res.setHeader('X-Frame-Options', 'DENY')
@@ -121,7 +128,7 @@ res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains'
 res.setHeader('Content-Security-Policy', "default-src 'self'")
 ```
 
-**[S12] Error Handling**
+**[S13] Error Handling**
 - Never expose stack traces to users
 - Log errors server-side for debugging
 - Return generic error messages to clients: `{ error: "Internal server error" }`
@@ -129,21 +136,21 @@ res.setHeader('Content-Security-Policy', "default-src 'self'")
 
 ### Priority: LOW
 
-**[S13] Security Logging**
+**[S14] Security Logging**
 - Log authentication attempts (success and failure)
 - Log authorization failures
 - Log input validation failures
 - Log configuration changes
 - Log account modifications
 
-**[S14] Never Log**
+**[S15] Never Log**
 - Passwords or password hashes
 - Session tokens or API keys
 - Credit card numbers
 - Personal identification numbers
 - Any secrets or credentials
 
-**[S15] CORS Configuration**
+**[S16] CORS Configuration**
 ```javascript
 // BAD: Permissive CORS
 app.use(cors({ origin: '*' }))
@@ -157,7 +164,7 @@ app.use(cors({
 }))
 ```
 
-**[S16] CSRF Protection**
+**[S17] CSRF Protection**
 - Use CSRF tokens for state-changing operations
 - Implement SameSite cookie attribute
 - Verify Origin/Referer headers
