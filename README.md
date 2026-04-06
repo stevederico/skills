@@ -71,6 +71,14 @@ Claude Code auto-selects the right agent based on your request. Ask to "build a 
 
 **Design**: Creates minimalist, modern design systems inspired by Vercel and shadcn/ui with Tailwind CSS v4, semantic tokens, Lucide icons, and accessibility-first principles.
 
+## Companion Skills
+
+Standalone skills that pair well with this collection:
+
+| Name | Description | Install |
+|------|-------------|---------|
+| [cartographer](https://github.com/stevederico/cartographer) | Architecture diagram generator | `npx skills add stevederico/cartographer` |
+
 ## Architecture
 
 Each agent exists in two formats:
