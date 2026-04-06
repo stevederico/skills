@@ -73,6 +73,10 @@ Claude Code auto-selects the right agent based on your request. Ask to "build a 
 
 **Design**: Creates minimalist, modern design systems inspired by Vercel and shadcn/ui with Tailwind CSS v4, semantic tokens, Lucide icons, and accessibility-first principles.
 
+**Domain WHOIS**: Checks domain availability across 12 TLDs (.com, .net, .org, .io, .dev, .app, .co, .xyz, .ai, .shop, .site, .tech) via direct WHOIS and RDAP lookups. No external API dependency.
+
+**Arch Docs**: Deep dives into codebase architecture with text explanations. Reads source code, traces data flows, and explains how systems work and why they're built that way. Outputs markdown with file:line references.
+
 ## Related Projects
 
 - [AGENTS.md](https://github.com/stevederico/agents-md) — Prompts for writing code with LLMs, Deno, Vite, React 19+
