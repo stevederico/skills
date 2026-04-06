@@ -26,6 +26,7 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | redteam | Challenge decisions with counter-arguments | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
 | code-optimizer | Dead code, deduplication, consolidation | [code-optimizer/](code-optimizer) | [subagents/code-optimizer.md](subagents/code-optimizer.md) |
 | design-vercel-shadcn | Vercel/shadcn minimalist design systems | [design-vercel-shadcn/](design-vercel-shadcn) | [subagents/design-vercel-shadcn.md](subagents/design-vercel-shadcn.md) |
+| domain-whois | Domain availability via WHOIS/RDAP | [domain-whois/](domain-whois) | — |
 
 ## Usage
 

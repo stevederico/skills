@@ -1,3 +1,7 @@
+1.6.0
+
+  Add domain-whois skill
+
 1.5.0
 
   Move skills to project root
