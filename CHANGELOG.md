@@ -1,3 +1,8 @@
+2.0.0
+
+  Add sd-loop sd-loop-cancel code-count
+  Rename steve-loop to sd-loop
+
 1.9.0
 
   Slim subagents to invoke skills

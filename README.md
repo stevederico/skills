@@ -30,6 +30,9 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | arch-docs | Architecture explanations and deep dives | [arch-docs/](arch-docs) | — |
 | tdd | Iterate until all tests pass | [tdd/](tdd) | — |
 | code-review | Summarize staged and unstaged git diffs | [code-review/](code-review) | — |
+| sd-loop | Autonomous loop — re-feeds prompt until done | [sd-loop/](sd-loop) | — |
+| sd-loop-cancel | Cancel active loop | [sd-loop-cancel/](sd-loop-cancel) | — |
+| code-count | Token counting and API cost estimation | [code-count/](code-count) | — |
 
 ## Usage
 
