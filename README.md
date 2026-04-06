@@ -82,6 +82,14 @@ Claude Code auto-selects the right agent based on your request. Ask to "build a 
 
 **Arch Docs**: Deep dives into codebase architecture with text explanations. Reads source code, traces data flows, and explains how systems work and why they're built that way. Outputs markdown with file:line references.
 
+**TDD**: Runs tests, reads failures, implements minimum code to pass one test at a time, repeats until green. Tests are the spec — never modifies test files unless asked.
+
+**Code Review**: Quick git diff summary — shows staged and unstaged changes with a 10-word-or-less summary per file.
+
+**SD Loop**: Autonomous task runner. Feeds a prompt in a loop until completion or max iterations. Defaults to reading SPEC.md and implementing everything in it.
+
+**Code Count**: Parses Claude Code JSONL transcripts to report token usage, estimated API cost, daily breakdown charts, and per-project breakdowns.
+
 ## Related Projects
 
 - [AGENTS.md](https://github.com/stevederico/agents-md) — Prompts for writing code with LLMs, Deno, Vite, React 19+
@@ -98,11 +106,9 @@ Standalone skills that pair well with this collection:
 
 Each agent exists in two formats:
 
-**Skills**: Folders at the project root with `SKILL.md` files containing priority matrices, rule IDs, and structured guidance. Works with any framework supporting the skills spec.
+**Skills** (source of truth): Folders at the project root with `SKILL.md` files containing priority matrices, rule IDs, and structured guidance. Works with any framework supporting the skills spec.
 
-**Subagents**: Markdown files in `subagents/` that Claude Code reads and spawns as specialized workers. Includes model and color configuration in frontmatter.
-
-Both contain identical expertise and behavior. The difference is invocation: subagents are automatic, skills use slash commands.
+**Subagents** (thin wrappers): Markdown files in `subagents/` with model/color frontmatter that invoke the corresponding skill. Claude Code spawns these as specialized workers. No duplicated logic — each subagent delegates to its skill via `/skill-name`.
 
 ## License
 
