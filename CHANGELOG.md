@@ -1,3 +1,7 @@
+1.2.0
+
+  Move subagents into subagents folder
+
 1.1.0
 
   Sync subagents with CLAUDE.md
