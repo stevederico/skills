@@ -1,3 +1,7 @@
+1.7.0
+
+  Add arch-docs skill
+
 1.6.0
 
   Add domain-whois skill
