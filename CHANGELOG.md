@@ -1,3 +1,7 @@
+2.2.0
+
+  Add skateboard-ui skill
+
 2.0.0
 
   Add sd-loop sd-loop-cancel code-count
