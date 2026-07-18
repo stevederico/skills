@@ -1,3 +1,7 @@
+2.10.0
+
+  Remove code-review skill
+
 2.9.0
 
   Remove domain-whois skill
