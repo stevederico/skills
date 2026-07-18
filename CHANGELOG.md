@@ -1,3 +1,7 @@
+2.8.0
+
+  Remove skateboard skill
+
 2.7.0
 
   Remove code-count skill
