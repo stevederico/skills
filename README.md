@@ -26,7 +26,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | redteam | Challenge decisions with counter-arguments | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
 | code-optimizer | Dead code, deduplication, consolidation | [code-optimizer/](code-optimizer) | [subagents/code-optimizer.md](subagents/code-optimizer.md) |
 | design-vercel-shadcn | Vercel/shadcn minimalist design systems | [design-vercel-shadcn/](design-vercel-shadcn) | [subagents/design-vercel-shadcn.md](subagents/design-vercel-shadcn.md) |
-| domain-whois | Domain availability via WHOIS/RDAP | [domain-whois/](domain-whois) | — |
 | code-review | Summarize staged and unstaged git diffs | [code-review/](code-review) | — |
 
 ## Usage
@@ -72,8 +71,6 @@ Claude Code auto-selects the right agent based on your request. Ask to "build a 
 **Code Optimizer**: Reduces code complexity, eliminates dead code, consolidates duplicate logic, creates reusable utilities without changing functionality.
 
 **Design**: Creates minimalist, modern design systems inspired by Vercel and shadcn/ui with Tailwind CSS v4, semantic tokens, Lucide icons, and accessibility-first principles.
-
-**Domain WHOIS**: Checks domain availability across 12 TLDs (.com, .net, .org, .io, .dev, .app, .co, .xyz, .ai, .shop, .site, .tech) via direct WHOIS and RDAP lookups. No external API dependency.
 
 **Arch Docs**: Deep dives into codebase architecture with text explanations. Reads source code, traces data flows, and explains how systems work and why they're built that way. Outputs markdown with file:line references.
 

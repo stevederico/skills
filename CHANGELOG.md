@@ -1,3 +1,7 @@
+2.9.0
+
+  Remove domain-whois skill
+
 2.8.0
 
   Remove skateboard skill
