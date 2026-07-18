@@ -1,3 +1,7 @@
+2.4.0
+
+  Remove tdd skill
+
 2.3.0
 
   Expand skateboard skill coverage

@@ -28,7 +28,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | design-vercel-shadcn | Vercel/shadcn minimalist design systems | [design-vercel-shadcn/](design-vercel-shadcn) | [subagents/design-vercel-shadcn.md](subagents/design-vercel-shadcn.md) |
 | domain-whois | Domain availability via WHOIS/RDAP | [domain-whois/](domain-whois) | — |
 | arch-docs | Architecture explanations and deep dives | [arch-docs/](arch-docs) | — |
-| tdd | Iterate until all tests pass | [tdd/](tdd) | — |
 | code-review | Summarize staged and unstaged git diffs | [code-review/](code-review) | — |
 | sd-loop | Autonomous loop — re-feeds prompt until done | [sd-loop/](sd-loop) | — |
 | sd-loop-cancel | Cancel active loop | [sd-loop-cancel/](sd-loop-cancel) | — |
