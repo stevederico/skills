@@ -1,3 +1,7 @@
+2.11.0
+
+  Remove reviewer skill
+
 2.10.0
 
   Remove code-review skill

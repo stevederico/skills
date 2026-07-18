@@ -19,7 +19,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | frontend | React 19 + Tailwind CSS v4 + Vite 7.1 | [frontend/](frontend) | [subagents/frontend.md](subagents/frontend.md) |
 | backend | Node.js/Hono API development | [backend/](backend) | [subagents/backend.md](subagents/backend.md) |
 | debug | Error investigation & troubleshooting | [debug/](debug) | [subagents/debug.md](subagents/debug.md) |
-| reviewer | Code review & refactoring | [reviewer/](reviewer) | [subagents/reviewer.md](subagents/reviewer.md) |
 | security | OWASP Top 10 vulnerability detection | [security/](security) | [subagents/security.md](subagents/security.md) |
 | docs | Stripe-style API documentation | [docs/](docs) | [subagents/docs.md](subagents/docs.md) |
 | deployer | Railway platform deployment | [deployer/](deployer) | [subagents/deployer.md](subagents/deployer.md) |
@@ -56,8 +55,6 @@ Claude Code auto-selects the right agent based on your request. Ask to "build a 
 **Backend**: Creates Node.js/Hono APIs with authentication (JWT or sessions), designs SQLite/MongoDB schemas, writes middleware for validation and errors, enforces rate limiting with exponential backoff and circuit breakers.
 
 **Debug**: Investigates errors by reading stack traces, analyzing network requests, tracing React renders, and finding root causes. Provides strategic debugging approaches instead of quick fixes.
-
-**Reviewer**: Analyzes code quality, finds performance issues, suggests refactoring patterns, checks project consistency, enforces WCAG 2.1 AA accessibility standards, and audits image optimization.
 
 **Security**: Scans for OWASP Top 10 vulnerabilities (SQL injection, XSS, CSRF, auth issues, data exposure). Reviews authentication, validates sanitization, checks for hardcoded secrets, audits external API safety.
 
