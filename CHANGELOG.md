@@ -1,3 +1,7 @@
+2.5.0
+
+  Remove sd-loop skills
+
 2.4.0
 
   Remove tdd skill

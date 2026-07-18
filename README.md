@@ -29,8 +29,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | domain-whois | Domain availability via WHOIS/RDAP | [domain-whois/](domain-whois) | — |
 | arch-docs | Architecture explanations and deep dives | [arch-docs/](arch-docs) | — |
 | code-review | Summarize staged and unstaged git diffs | [code-review/](code-review) | — |
-| sd-loop | Autonomous loop — re-feeds prompt until done | [sd-loop/](sd-loop) | — |
-| sd-loop-cancel | Cancel active loop | [sd-loop-cancel/](sd-loop-cancel) | — |
 | code-count | Token counting and API cost estimation | [code-count/](code-count) | — |
 | skateboard | Skateboard boilerplate + skateboard-ui patterns | [skateboard/](skateboard) | — |
 
