@@ -1,3 +1,7 @@
+2.7.0
+
+  Remove code-count skill
+
 2.6.0
 
   Remove arch-docs skill

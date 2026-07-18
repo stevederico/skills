@@ -28,7 +28,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | design-vercel-shadcn | Vercel/shadcn minimalist design systems | [design-vercel-shadcn/](design-vercel-shadcn) | [subagents/design-vercel-shadcn.md](subagents/design-vercel-shadcn.md) |
 | domain-whois | Domain availability via WHOIS/RDAP | [domain-whois/](domain-whois) | — |
 | code-review | Summarize staged and unstaged git diffs | [code-review/](code-review) | — |
-| code-count | Token counting and API cost estimation | [code-count/](code-count) | — |
 | skateboard | Skateboard boilerplate + skateboard-ui patterns | [skateboard/](skateboard) | — |
 
 ## Usage
