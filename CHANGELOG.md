@@ -1,3 +1,7 @@
+2.6.0
+
+  Remove arch-docs skill
+
 2.5.0
 
   Remove sd-loop skills
