@@ -179,6 +179,5 @@ Structure deliverables as:
 ## Related Skills
 
 - **frontend**: For React UI that consumes these APIs
-- **deployer**: For deploying the backend to Railway
 - **security**: For auditing authentication and input validation
 - **docs**: For documenting the API endpoints

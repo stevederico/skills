@@ -324,4 +324,3 @@ Then: Prioritized Action Plan (critical fixes -> high-impact -> quick wins -> lo
 - **backend**: For fixing server-side vulnerabilities
 - **frontend**: For fixing client-side vulnerabilities (XSS, CSP)
 - **reviewer**: For general code quality review alongside security
-- **deployer**: For verifying production security configuration
