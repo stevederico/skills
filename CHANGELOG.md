@@ -1,3 +1,8 @@
+2.25.0
+
+  Drop local gitignore
+  Slim catalog README
+
 2.24.0
 
   Move redteam to dotfiles
