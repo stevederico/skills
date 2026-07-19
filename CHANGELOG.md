@@ -1,3 +1,7 @@
+2.13.0
+
+  Remove frontend skill
+
 2.12.0
 
   Remove deployer skill

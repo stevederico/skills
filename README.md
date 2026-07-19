@@ -8,7 +8,7 @@ Specialized AI agents for software development.
 
 ## Overview
 
-A collection of expert agents that handle specific development tasks: frontend work, backend APIs, debugging, security audits, code optimization, and design systems. Each agent knows its domain deeply and executes autonomously.
+A collection of expert agents that handle specific development tasks: backend APIs, debugging, security audits, code optimization, and design systems. Each agent knows its domain deeply and executes autonomously.
 
 Two distribution formats available. Use subagents with Claude Code or install as universal skills for other frameworks. Same expertise, different packaging.
 
@@ -16,7 +16,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 
 | Name | Description | Skill | Subagent |
 |------|-------------|-------|----------|
-| frontend | React 19 + Tailwind CSS v4 + Vite 7.1 | [frontend/](frontend) | [subagents/frontend.md](subagents/frontend.md) |
 | backend | Node.js/Hono API development | [backend/](backend) | [subagents/backend.md](subagents/backend.md) |
 | debug | Error investigation & troubleshooting | [debug/](debug) | [subagents/debug.md](subagents/debug.md) |
 | security | OWASP Top 10 vulnerability detection | [security/](security) | [subagents/security.md](subagents/security.md) |
@@ -35,7 +34,7 @@ Install via package manager:
 npx skills add stevederico/skills
 ```
 
-Invoke agents with slash commands like `/frontend`, `/debug`, or `/security`. Each skill has its own `SKILL.md` with priority matrices and structured rule IDs.
+Invoke agents with slash commands like `/backend`, `/debug`, or `/security`. Each skill has its own `SKILL.md` with priority matrices and structured rule IDs.
 
 ### Claude Code Subagents
 
@@ -45,11 +44,9 @@ Copy agent files to your subagents directory:
 cp subagents/*.md ~/.claude/agents/
 ```
 
-Claude Code auto-selects the right agent based on your request. Ask to "build a login form" and it triggers the frontend agent. Say "investigate this API error" and the debug agent handles it.
+Claude Code auto-selects the right agent based on your request. Say "investigate this API error" and the debug agent handles it.
 
 ## Core Features
-
-**Frontend**: Builds React 19 apps with Vite 7.1, Tailwind CSS v4, and react-router-dom v7.9+. Implements shadcn/ui components, handles form validation, manages dark mode with semantic tokens, enforces WCAG 2.1 AA accessibility, and optimizes images.
 
 **Backend**: Creates Node.js/Hono APIs with authentication (JWT or sessions), designs SQLite/MongoDB schemas, writes middleware for validation and errors, enforces rate limiting with exponential backoff and circuit breakers.
 
