@@ -1,3 +1,7 @@
+2.22.0
+
+  Remove subagents format
+
 2.21.0
 
   Remove code-optimizer skill

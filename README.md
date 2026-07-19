@@ -2,75 +2,38 @@
   <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2Fva3lwOG01aDN5ZDM4aXE3dmk3a3NnOWp3MnAzNHZkb2l1d3Y1MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btNhMBytxAM6YBa/giphy.gif" width="600" alt="Agent Skills">
 </div>
 
-# Agent Skills & Subagents
+# Agent Skills
 
-Specialized AI agents for software development.
+Adversarial decision stress-testing for AI coding agents.
 
-## Overview
+## Available Skills
 
-A collection of expert agents for adversarial decision stress-testing. Each agent knows its domain deeply and executes autonomously.
-
-Two distribution formats available. Use subagents with Claude Code or install as universal skills for other frameworks. Same expertise, different packaging.
-
-## Available Agents
-
-| Name | Description | Skill | Subagent |
-|------|-------------|-------|----------|
-| redteam | Adversarial pushback — plan / adversarial / security modes | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
+| Name | Description | Path |
+|------|-------------|------|
+| redteam | Adversarial pushback — `plan` / `adversarial` / `security` modes | [redteam/](redteam) |
 
 ## Usage
-
-### Skills
-
-Install via package manager:
 
 ```bash
 npx skills add stevederico/skills
 ```
 
-Invoke agents with slash commands like `/redteam`, `/redteam plan`, `/redteam adversarial`. Each skill has its own `SKILL.md`.
-
-### Claude Code Subagents
-
-Copy agent files to your subagents directory:
-
-```bash
-cp subagents/*.md ~/.claude/agents/
+```text
+/redteam
+/redteam plan
+/redteam adversarial
+/redteam security
 ```
 
-Claude Code auto-selects the right agent based on your request.
-
-## Core Features
-
-**Redteam**: One skill, three modes — `plan` (talk you out of a decision), `adversarial` (attack built work / diffs / tests), `security` (attacker lens). Direct, evidence-first, no hedging.
-
-**Arch Docs**: Deep dives into codebase architecture with text explanations. Reads source code, traces data flows, and explains how systems work and why they're built that way. Outputs markdown with file:line references.
-
-**TDD**: Runs tests, reads failures, implements minimum code to pass one test at a time, repeats until green. Tests are the spec — never modifies test files unless asked.
-
-**SD Loop**: Autonomous task runner. Feeds a prompt in a loop until completion or max iterations. Defaults to reading SPEC.md and implementing everything in it.
-
-**Code Count**: Parses Claude Code JSONL transcripts to report token usage, estimated API cost, daily breakdown charts, and per-project breakdowns.
+**Redteam modes:**
+- `plan` — talk you out of a decision before you build
+- `adversarial` — attack built work (diffs, tests, claims)
+- `security` — attacker lens (auth, secrets, injection)
 
 ## Related Projects
 
-- [AGENTS.md](https://github.com/stevederico/agents-md) — Prompts for writing code with LLMs, Deno, Vite, React 19+
-
-## Companion Skills
-
-Standalone skills that pair well with this collection:
-
-| Name | Description | Install |
-|------|-------------|---------|
-| [cartographer](https://github.com/stevederico/cartographer) | Architecture diagram generator | `npx skills add stevederico/cartographer` |
-
-## Architecture
-
-Each agent exists in two formats:
-
-**Skills** (source of truth): Folders at the project root with `SKILL.md` files containing priority matrices, rule IDs, and structured guidance. Works with any framework supporting the skills spec.
-
-**Subagents** (thin wrappers): Markdown files in `subagents/` with model/color frontmatter that invoke the corresponding skill. Claude Code spawns these as specialized workers. No duplicated logic — each subagent delegates to its skill via `/skill-name`.
+- [AGENTS.md](https://github.com/stevederico/agents-md) — Prompts for writing code with LLMs
+- [cartographer](https://github.com/stevederico/cartographer) — Architecture diagrams (`npx skills add stevederico/cartographer`)
 
 ## License
 
