@@ -8,7 +8,7 @@ Specialized AI agents for software development.
 
 ## Overview
 
-A collection of expert agents that handle specific development tasks: code optimization, design systems, and decision stress-testing. Each agent knows its domain deeply and executes autonomously.
+A collection of expert agents that handle specific development tasks: code optimization and adversarial decision stress-testing. Each agent knows its domain deeply and executes autonomously.
 
 Two distribution formats available. Use subagents with Claude Code or install as universal skills for other frameworks. Same expertise, different packaging.
 
@@ -18,7 +18,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 |------|-------------|-------|----------|
 | redteam | Adversarial pushback — plan / adversarial / security modes | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
 | code-optimizer | Dead code, deduplication, consolidation | [code-optimizer/](code-optimizer) | [subagents/code-optimizer.md](subagents/code-optimizer.md) |
-| design-vercel-shadcn | Vercel/shadcn minimalist design systems | [design-vercel-shadcn/](design-vercel-shadcn) | [subagents/design-vercel-shadcn.md](subagents/design-vercel-shadcn.md) |
 
 ## Usage
 
@@ -47,8 +46,6 @@ Claude Code auto-selects the right agent based on your request.
 **Redteam**: One skill, three modes — `plan` (talk you out of a decision), `adversarial` (attack built work / diffs / tests), `security` (attacker lens). Direct, evidence-first, no hedging.
 
 **Code Optimizer**: Reduces code complexity, eliminates dead code, consolidates duplicate logic, creates reusable utilities without changing functionality.
-
-**Design**: Creates minimalist, modern design systems inspired by Vercel and shadcn/ui with Tailwind CSS v4, semantic tokens, Lucide icons, and accessibility-first principles.
 
 **Arch Docs**: Deep dives into codebase architecture with text explanations. Reads source code, traces data flows, and explains how systems work and why they're built that way. Outputs markdown with file:line references.
 

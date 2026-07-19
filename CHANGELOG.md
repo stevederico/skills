@@ -1,3 +1,7 @@
+2.20.0
+
+  Remove design-vercel-shadcn skill
+
 2.19.0
 
   Rename verify to adversarial
