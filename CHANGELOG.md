@@ -1,3 +1,8 @@
+2.23.0
+
+  Catalog dedicated skill repos
+  Plus redteam in-repo
+
 2.22.0
 
   Remove subagents format
