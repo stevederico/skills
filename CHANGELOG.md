@@ -1,3 +1,7 @@
+2.17.0
+
+  Remove docs skill
+
 2.16.0
 
   Remove security skill
