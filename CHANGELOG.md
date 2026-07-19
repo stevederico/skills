@@ -1,3 +1,7 @@
+2.16.0
+
+  Remove security skill
+
 2.15.0
 
   Remove debug skill
