@@ -1,3 +1,7 @@
+2.18.0
+
+  Rewrite redteam multi-mode
+
 2.17.0
 
   Remove docs skill

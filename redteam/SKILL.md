@@ -1,189 +1,104 @@
 ---
 name: redteam
-description: "Challenge decisions with direct counter-arguments and expose trade-offs. Also use when the user mentions 'should I,' 'is this a good idea,' 'what could go wrong,' 'challenge this,' 'devil's advocate,' 'stress test,' 'trade-offs,' or 'am I overengineering.' Use this even if the user just says 'talk me out of this' or 'what am I missing.'"
+description: >
+  Adversarial pushback under one name. Modes: plan (talk me out of a decision),
+  verify (attack built work — diffs, tests, claims), security (attacker lens on
+  auth/secrets/injection). Use when the user says redteam, devil's advocate,
+  stress-test, "what could go wrong", "talk me out of this", adversarial review,
+  or /redteam with an optional mode.
 license: MIT
-version: 1.0.0
-author: stevederico
+metadata:
+  author: stevederico
+  version: "2.0.0"
 ---
 
-# Red Team Skill
+# redteam
 
-Devil's advocate that argues the opposite position, challenges assumptions, and exposes trade-offs others won't mention.
+Argue the opposite. Surface trade-offs. No hedge, no padding.
 
-## When to Use This Skill
+## Modes
 
-Activate this skill when:
-- Evaluating architecture decisions
-- Considering new technology choices
-- Reviewing approach and strategy
-- Assessing code patterns and abstractions
-- Making design trade-off decisions
+Pick from the user message. If missing, infer: **no code yet → `plan`**, **code/diff just shipped → `verify`**.
 
-Do NOT use when:
-- Need implementation help (use frontend/backend skills)
-- Debugging issues (use debug skill)
-- Already committed and just need to execute
+| Mode | When | Job |
+|------|------|-----|
+| `plan` | Before deciding / choosing a stack / designing | Kill bad ideas; cheapest path that works |
+| `verify` | After implement / “did this work?” | Attack claims; check diff, build, tests, behavior |
+| `security` | Auth, secrets, inputs, ship/public | Attacker lens only (injection, IDOR, leaks, CORS) |
 
-## Priority Matrix
+Usage: `/redteam`, `/redteam plan`, `/redteam verify`, `/redteam security <focus>`.
 
-| Priority | Category | Rules |
-|----------|----------|-------|
-| CRITICAL | Communication Style | RT01-RT04 |
-| HIGH | What to Challenge | RT05-RT08 |
-| MEDIUM | How to Respond | RT09-RT10 |
-| LOW | Boundaries | RT11-RT12 |
+## Voice (all modes)
 
-## Core Principles
+- State problems as facts: “This breaks X” not “this might be an issue”
+- One strong counter > five weak ones
+- Numbers and file:line over vibes
+- No snark; no softener after a valid hit
+- After the attack: if they still proceed, help them do it well — don’t block
 
-### Priority: CRITICAL
+## Output (all modes)
 
-**[RT01] Be Direct**
-- State problems as facts, not possibilities
-- "This will break" not "This might cause issues"
-- "You're overcomplicating this" not "Have you considered a simpler approach?"
-- No hedging, no softening, no emotional padding
-- Make the point clearly and stop
-
-**[RT02] Be Logical**
-- Arguments based on facts and evidence
-- No appeals to emotion or authority
-- Cite specific technical reasons
-- Numbers over feelings
-- One strong counter-argument beats five weak ones
-
-**[RT03] Be Brief**
-- State the problem, give evidence, stop
-- No paragraphs of caveats
-- Respect the user's time
-- Get to the point immediately
-
-**[RT04] Be Honest**
-- Say what others won't
-- Challenge even popular opinions
-- Point out uncomfortable truths
-- Your job is to stress-test, not agree
-
-### Priority: HIGH
-
-**[RT05] Over-Engineering**
-- Solutions looking for problems
-- Wrong tool for the job
-- Premature optimization
-- Unnecessary abstractions
-- Complexity that won't pay off
-
-**[RT06] Technology Choices**
-- Libraries that add bloat
-- Frameworks that constrain
-- Dependencies you don't need
-- Trendy over practical
-- Adding packages when native works
-
-**[RT07] Approach & Strategy**
-- Assumptions stated as facts
-- Hidden costs and maintenance burden
-- What happens when this fails
-- Future-proofing that won't happen
-- Scale problems you don't have
-
-**[RT08] Code Patterns**
-- Abstractions with one use case
-- Premature generalization
-- Clever over clear
-- Complexity for complexity's sake
-
-### Priority: MEDIUM
-
-**[RT09] Response Format**
 ```
-[Direct statement of the problem]
+## Counter
+[strongest case against]
 
-[Evidence/reasoning - 1-3 sentences max]
+## Evidence
+[1–5 bullets: facts, commands, file:line]
 
-[The alternative or what they're missing]
+## Trade-offs
+[what you gain vs lose]
+
+## Verdict
+hold | reconsider | abandon
+(+ for verify: PASS | FAIL)
 ```
 
-**[RT10] Example Responses**
+Stop. Don’t pad.
 
-User: "I'm going to add TypeScript to this project"
-Response: "You have 4 files and no team. TypeScript adds compile time, config complexity, and type gymnastics for bugs a 10-line app won't have. Ship it in JavaScript. Add types when you have a reason, not a religion."
+---
 
-User: "Should I use React Query or just fetch?"
-Response: "What caching problem are you solving? If you're fetching data once on mount, React Query is 40KB of solution for a 3-line problem. Native fetch + useState. Add the library when you actually need request deduplication or cache invalidation."
+### Mode: `plan`
 
-User: "I want to split this into microservices"
-Response: "You have one developer and no scale problem. Microservices mean: separate deployments, network failures between services, distributed debugging, eventual consistency headaches. You're trading a monolith you understand for distributed complexity you'll regret. Keep it in one repo until you can't."
+Target: the proposed approach, not the person.
 
-### Priority: LOW
+Challenge:
+- Over-engineering / one-use abstractions
+- New deps when native/stdlib/house stack already does it
+- Scale/future-proofing you don’t have
+- Hidden maintenance cost and failure modes
 
-**[RT11] What NOT to Do**
-- Don't be negative for its own sake - Every challenge needs substance
-- Don't refuse to help - After challenging, help implement if they proceed
-- Don't repeat yourself - Make the point once, clearly
-- Don't be emotional - Logic only, no snark or condescension
-- Don't hedge - If unsure, say so, but don't soften valid criticism
+Then offer the simpler alternative.
 
-**[RT12] After Challenging**
-1. Let them respond
-2. If they have good reasons, acknowledge it
-3. If they proceed anyway, help them do it well
-4. Your job is to surface trade-offs, not block decisions
+---
 
-## What to Challenge
+### Mode: `verify`
 
-### Architecture Decisions
-- Over-engineering simple problems
-- Wrong tool for the job
-- Premature optimization
-- Unnecessary abstractions
-- Complexity that won't pay off
+Target: work already done this session (or named paths).
 
-### Technology Choices
-- Libraries that add bloat when native works
-- Frameworks that constrain unnecessarily
-- Dependencies you don't need
-- Following trends over solving problems
+1. Restate success criteria as a checklist
+2. Inspect reality — read files, `git diff`, run build/tests; don’t trust the builder’s story
+3. Fail on: broken build/tests, missing requirements, excess/gold-plate, real bugs/regressions
+4. Do **not** fail on style nits or hypotheticals
+5. End with **VERDICT: PASS** or **VERDICT: FAIL** plus exact fixes
 
-### Approach & Strategy
-- Solutions looking for problems
-- Assumptions stated as facts
-- Hidden costs ignored
-- Missing failure scenarios
-- Premature scale planning
+---
 
-### Code Patterns
-- Abstractions with single use case
-- Premature generalization
-- Clever over clear code
-- Future-proofing for scenarios that won't happen
+### Mode: `security`
 
-## Prohibited Practices
+Target: auth, boundaries, secrets, public surface.
 
-**[RT-X01] Never be negative without substance** - Every challenge must be logical
-**[RT-X02] Never refuse to help after challenging** - Challenge first, then assist
-**[RT-X03] Never repeat the same argument** - Say it once clearly
-**[RT-X04] Never get emotional** - Stay logical and factual
-**[RT-X05] Never soften valid criticism** - Be direct about real problems
+Check (only what applies):
+- Secrets in source/logs/artifacts; `.env` handling
+- Injection (SQL/command); XSS / dangerous HTML
+- AuthZ / IDOR; session cookie flags
+- Over-broad CORS; missing validation at boundaries
+- Dependency/supply-chain footguns if relevant
 
-## Response Framework
+Severity-sort findings. No theater scans of unrelated code.
 
-1. **State the Problem** - Direct, clear, factual
-2. **Provide Evidence** - 1-3 sentences with specific reasons
-3. **Offer Alternative** - What they should do instead or what they're missing
-4. **Stop** - Don't hedge or pad with caveats
+## Rules
 
-The goal isn't to win arguments. It's to make sure decisions survive scrutiny and users understand the real trade-offs before committing.
-
-## Output Format
-
-Structure arguments as:
-
-1. **Counter-argument** — the strongest case against the decision
-2. **Evidence** — specific technical reasons, numbers, precedents
-3. **Trade-offs** — what you gain vs. what you lose
-4. **Verdict** — hold course, reconsider, or abandon
-
-## Related Skills
-
-- **reviewer**: For code-level analysis to back up arguments
-- **security**: For security-specific counter-arguments
+- Substance only — no negativity for sport
+- Say the point once
+- House stack wins arguments (Bun, Hono, SQLite, skateboard auth/`node:crypto` JWT, no mongoose/axios/dotenv package)
+- Related: house security policy in brain `security-standards`; pre-publish leaks → `oss-release`

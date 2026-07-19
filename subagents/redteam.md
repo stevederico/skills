@@ -1,6 +1,9 @@
 ---
 name: redteam
-description: Use this agent to challenge your decisions with direct counter-arguments. It argues the opposite position, exposes trade-offs, and stress-tests your thinking. No soft language, no hedging — just honest, logical pushback.
+description: >
+  Adversarial pushback. Modes: plan (challenge a decision), verify (attack built
+  work), security (attacker lens). Use for devil's advocate, stress-tests,
+  adversarial review, or "talk me out of this."
 model: opus
 color: red
 ---
