@@ -1,3 +1,7 @@
+2.14.0
+
+  Remove backend skill
+
 2.13.0
 
   Remove frontend skill
