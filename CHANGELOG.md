@@ -1,3 +1,7 @@
+2.19.0
+
+  Rename verify to adversarial
+
 2.18.0
 
   Rewrite redteam multi-mode

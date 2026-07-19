@@ -2,14 +2,14 @@
 name: redteam
 description: >
   Adversarial pushback under one name. Modes: plan (talk me out of a decision),
-  verify (attack built work — diffs, tests, claims), security (attacker lens on
-  auth/secrets/injection). Use when the user says redteam, devil's advocate,
+  adversarial (attack built work — diffs, tests, claims), security (attacker lens
+  on auth/secrets/injection). Use when the user says redteam, devil's advocate,
   stress-test, "what could go wrong", "talk me out of this", adversarial review,
   or /redteam with an optional mode.
 license: MIT
 metadata:
   author: stevederico
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # redteam
@@ -18,15 +18,15 @@ Argue the opposite. Surface trade-offs. No hedge, no padding.
 
 ## Modes
 
-Pick from the user message. If missing, infer: **no code yet → `plan`**, **code/diff just shipped → `verify`**.
+Pick from the user message. If missing, infer: **no code yet → `plan`**, **code/diff just shipped → `adversarial`**.
 
 | Mode | When | Job |
 |------|------|-----|
 | `plan` | Before deciding / choosing a stack / designing | Kill bad ideas; cheapest path that works |
-| `verify` | After implement / “did this work?” | Attack claims; check diff, build, tests, behavior |
+| `adversarial` | After implement / “did this work?” | Attack claims; check diff, build, tests, behavior |
 | `security` | Auth, secrets, inputs, ship/public | Attacker lens only (injection, IDOR, leaks, CORS) |
 
-Usage: `/redteam`, `/redteam plan`, `/redteam verify`, `/redteam security <focus>`.
+Usage: `/redteam`, `/redteam plan`, `/redteam adversarial`, `/redteam security <focus>`.
 
 ## Voice (all modes)
 
@@ -50,7 +50,7 @@ Usage: `/redteam`, `/redteam plan`, `/redteam verify`, `/redteam security <focus
 
 ## Verdict
 hold | reconsider | abandon
-(+ for verify: PASS | FAIL)
+(+ for adversarial: PASS | FAIL)
 ```
 
 Stop. Don’t pad.
@@ -71,7 +71,7 @@ Then offer the simpler alternative.
 
 ---
 
-### Mode: `verify`
+### Mode: `adversarial`
 
 Target: work already done this session (or named paths).
 

@@ -16,7 +16,7 @@ Two distribution formats available. Use subagents with Claude Code or install as
 
 | Name | Description | Skill | Subagent |
 |------|-------------|-------|----------|
-| redteam | Adversarial pushback — plan / verify / security modes | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
+| redteam | Adversarial pushback — plan / adversarial / security modes | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
 | code-optimizer | Dead code, deduplication, consolidation | [code-optimizer/](code-optimizer) | [subagents/code-optimizer.md](subagents/code-optimizer.md) |
 | design-vercel-shadcn | Vercel/shadcn minimalist design systems | [design-vercel-shadcn/](design-vercel-shadcn) | [subagents/design-vercel-shadcn.md](subagents/design-vercel-shadcn.md) |
 
@@ -44,7 +44,7 @@ Claude Code auto-selects the right agent based on your request.
 
 ## Core Features
 
-**Redteam**: One adversarial skill, three modes — `plan` (talk you out of a decision), `verify` (attack built work / diffs / tests), `security` (attacker lens). Direct, evidence-first, no hedging.
+**Redteam**: One skill, three modes — `plan` (talk you out of a decision), `adversarial` (attack built work / diffs / tests), `security` (attacker lens). Direct, evidence-first, no hedging.
 
 **Code Optimizer**: Reduces code complexity, eliminates dead code, consolidates duplicate logic, creates reusable utilities without changing functionality.
 
