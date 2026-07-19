@@ -1,3 +1,8 @@
+2.24.0
+
+  Move redteam to dotfiles
+  Catalog-only repo
+
 2.23.0
 
   Catalog dedicated skill repos

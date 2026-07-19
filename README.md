@@ -4,24 +4,7 @@
 
 # Agent Skills
 
-Open catalog of Steve Derico agent skills. This repo holds **redteam**; other skills live in **dedicated repos** (install each from its source).
-
-## In this repo
-
-| Skill | Description | Install |
-|------|-------------|---------|
-| [redteam](redteam/) | Adversarial pushback — `plan` / `adversarial` / `security` | `npx skills add stevederico/skills` |
-
-```text
-/redteam
-/redteam plan
-/redteam adversarial
-/redteam security
-```
-
-- **plan** — talk you out of a decision before you build  
-- **adversarial** — attack built work (diffs, tests, claims)  
-- **security** — attacker lens (auth, secrets, injection)  
+Catalog of Steve Derico agent skills. **No installable skills live in this repo** — each skill has its own source (dedicated GitHub repo or local dotfiles).
 
 ## Dedicated skill repos
 
@@ -35,16 +18,21 @@ Open catalog of Steve Derico agent skills. This repo holds **redteam**; other sk
 
 **cartographer** modes: `diagram` (HTML) · `docs` (text deep-dive) · auto if omitted.
 
+## Local (dotfiles)
+
+| Skill | Notes |
+|------|------|
+| **redteam** | Adversarial pushback (`plan` / `adversarial` / `security`) — lives in [dotfiles `agents/skills/redteam`](https://github.com/stevederico/dotfiles); not published via `npx skills` |
+
 ### Related app (skill still local / later)
 
 | Project | Repo | Notes |
 |---------|------|--------|
 | **session-review** | [stevederico/session-review](https://github.com/stevederico/session-review) | Usage/cost UI; agent skill not published from this repo yet |
 
-## Install all (dedicated + redteam)
+## Install all (dedicated)
 
 ```bash
-npx skills add stevederico/skills
 npx skills add stevederico/cartographer
 npx skills add stevederico/domain-checker
 npx skills add stevederico/hon-maguro
@@ -56,6 +44,7 @@ npx skills add stevederico/video-understanding
 
 - [AGENTS.md](https://github.com/stevederico/agents-md) — prompts for writing code with LLMs  
 - [local-ai-cli](https://github.com/stevederico/local-ai-cli) — local whisper / LLM for video-understanding  
+- [dotfiles](https://github.com/stevederico/dotfiles) — local skills hub (`agents/skills/`)
 
 ## License
 
