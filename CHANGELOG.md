@@ -1,3 +1,7 @@
+2.21.0
+
+  Remove code-optimizer skill
+
 2.20.0
 
   Remove design-vercel-shadcn skill

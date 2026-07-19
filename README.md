@@ -8,7 +8,7 @@ Specialized AI agents for software development.
 
 ## Overview
 
-A collection of expert agents that handle specific development tasks: code optimization and adversarial decision stress-testing. Each agent knows its domain deeply and executes autonomously.
+A collection of expert agents for adversarial decision stress-testing. Each agent knows its domain deeply and executes autonomously.
 
 Two distribution formats available. Use subagents with Claude Code or install as universal skills for other frameworks. Same expertise, different packaging.
 
@@ -17,7 +17,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | Name | Description | Skill | Subagent |
 |------|-------------|-------|----------|
 | redteam | Adversarial pushback — plan / adversarial / security modes | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
-| code-optimizer | Dead code, deduplication, consolidation | [code-optimizer/](code-optimizer) | [subagents/code-optimizer.md](subagents/code-optimizer.md) |
 
 ## Usage
 
@@ -29,7 +28,7 @@ Install via package manager:
 npx skills add stevederico/skills
 ```
 
-Invoke agents with slash commands like `/redteam` or `/code-optimizer`. Each skill has its own `SKILL.md` with priority matrices and structured rule IDs.
+Invoke agents with slash commands like `/redteam`, `/redteam plan`, `/redteam adversarial`. Each skill has its own `SKILL.md`.
 
 ### Claude Code Subagents
 
@@ -44,8 +43,6 @@ Claude Code auto-selects the right agent based on your request.
 ## Core Features
 
 **Redteam**: One skill, three modes — `plan` (talk you out of a decision), `adversarial` (attack built work / diffs / tests), `security` (attacker lens). Direct, evidence-first, no hedging.
-
-**Code Optimizer**: Reduces code complexity, eliminates dead code, consolidates duplicate logic, creates reusable utilities without changing functionality.
 
 **Arch Docs**: Deep dives into codebase architecture with text explanations. Reads source code, traces data flows, and explains how systems work and why they're built that way. Outputs markdown with file:line references.
 
