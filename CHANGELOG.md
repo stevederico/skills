@@ -1,3 +1,7 @@
+2.12.0
+
+  Remove deployer skill
+
 2.11.0
 
   Remove reviewer skill

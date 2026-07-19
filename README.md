@@ -8,7 +8,7 @@ Specialized AI agents for software development.
 
 ## Overview
 
-A collection of expert agents that handle specific development tasks: frontend work, backend APIs, debugging, security audits, code optimization, design systems, and deployments. Each agent knows its domain deeply and executes autonomously.
+A collection of expert agents that handle specific development tasks: frontend work, backend APIs, debugging, security audits, code optimization, and design systems. Each agent knows its domain deeply and executes autonomously.
 
 Two distribution formats available. Use subagents with Claude Code or install as universal skills for other frameworks. Same expertise, different packaging.
 
@@ -21,7 +21,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 | debug | Error investigation & troubleshooting | [debug/](debug) | [subagents/debug.md](subagents/debug.md) |
 | security | OWASP Top 10 vulnerability detection | [security/](security) | [subagents/security.md](subagents/security.md) |
 | docs | Stripe-style API documentation | [docs/](docs) | [subagents/docs.md](subagents/docs.md) |
-| deployer | Railway platform deployment | [deployer/](deployer) | [subagents/deployer.md](subagents/deployer.md) |
 | redteam | Challenge decisions with counter-arguments | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
 | code-optimizer | Dead code, deduplication, consolidation | [code-optimizer/](code-optimizer) | [subagents/code-optimizer.md](subagents/code-optimizer.md) |
 | design-vercel-shadcn | Vercel/shadcn minimalist design systems | [design-vercel-shadcn/](design-vercel-shadcn) | [subagents/design-vercel-shadcn.md](subagents/design-vercel-shadcn.md) |
@@ -59,8 +58,6 @@ Claude Code auto-selects the right agent based on your request. Ask to "build a 
 **Security**: Scans for OWASP Top 10 vulnerabilities (SQL injection, XSS, CSRF, auth issues, data exposure). Reviews authentication, validates sanitization, checks for hardcoded secrets, audits external API safety.
 
 **Docs**: Writes Stripe-style API documentation with detailed endpoints, complete request/response examples, error formats, and auth requirements.
-
-**Deployer**: Handles Railway deployments including environment config, database provisioning, custom domains, CORS verification, and production verification.
 
 **Redteam**: Challenges technical decisions with counter-arguments, exposes trade-offs, stress-tests assumptions, surfaces failure modes.
 
