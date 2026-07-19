@@ -1,6 +1,6 @@
 # Agent Skills
 
-Catalog of Steve Derico agent skills. **This repo holds no installable skills** — each skill lives in its own GitHub repo or in [dotfiles](https://github.com/stevederico/dotfiles).
+Catalog of Steve Derico agent skills. **This repo holds no installable skills** — each skill lives in its own dedicated GitHub repo.
 
 ## Dedicated repos
 
@@ -14,12 +14,6 @@ Catalog of Steve Derico agent skills. **This repo holds no installable skills** 
 
 **cartographer** modes: `diagram` (HTML) · `docs` (text) · auto if omitted.
 
-## Local (dotfiles)
-
-| Skill | Notes |
-|-------|--------|
-| **redteam** | Adversarial pushback — `plan` / `adversarial` / `security` — [dotfiles `agents/skills/redteam`](https://github.com/stevederico/dotfiles) |
-
 ## Related
 
 | Project | Notes |
@@ -27,7 +21,6 @@ Catalog of Steve Derico agent skills. **This repo holds no installable skills** 
 | [session-review](https://github.com/stevederico/session-review) | Usage/cost UI (skill not published from here) |
 | [AGENTS.md](https://github.com/stevederico/agents-md) | Prompts for writing code with LLMs |
 | [local-ai-cli](https://github.com/stevederico/local-ai-cli) | Local whisper / LLM for video-understanding |
-| [dotfiles](https://github.com/stevederico/dotfiles) | Local skills hub (`agents/skills/`) |
 
 ## License
 

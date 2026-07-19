@@ -1,3 +1,7 @@
+2.26.0
+
+  Drop redteam and local skill refs from README
+
 2.25.0
 
   Drop local gitignore
