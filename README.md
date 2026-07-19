@@ -8,7 +8,7 @@ Specialized AI agents for software development.
 
 ## Overview
 
-A collection of expert agents that handle specific development tasks: debugging, security audits, code optimization, and design systems. Each agent knows its domain deeply and executes autonomously.
+A collection of expert agents that handle specific development tasks: security audits, code optimization, and design systems. Each agent knows its domain deeply and executes autonomously.
 
 Two distribution formats available. Use subagents with Claude Code or install as universal skills for other frameworks. Same expertise, different packaging.
 
@@ -16,7 +16,6 @@ Two distribution formats available. Use subagents with Claude Code or install as
 
 | Name | Description | Skill | Subagent |
 |------|-------------|-------|----------|
-| debug | Error investigation & troubleshooting | [debug/](debug) | [subagents/debug.md](subagents/debug.md) |
 | security | OWASP Top 10 vulnerability detection | [security/](security) | [subagents/security.md](subagents/security.md) |
 | docs | Stripe-style API documentation | [docs/](docs) | [subagents/docs.md](subagents/docs.md) |
 | redteam | Challenge decisions with counter-arguments | [redteam/](redteam) | [subagents/redteam.md](subagents/redteam.md) |
@@ -33,7 +32,7 @@ Install via package manager:
 npx skills add stevederico/skills
 ```
 
-Invoke agents with slash commands like `/debug`, or `/security`. Each skill has its own `SKILL.md` with priority matrices and structured rule IDs.
+Invoke agents with slash commands like `/security`. Each skill has its own `SKILL.md` with priority matrices and structured rule IDs.
 
 ### Claude Code Subagents
 
@@ -43,11 +42,9 @@ Copy agent files to your subagents directory:
 cp subagents/*.md ~/.claude/agents/
 ```
 
-Claude Code auto-selects the right agent based on your request. Say "investigate this API error" and the debug agent handles it.
+Claude Code auto-selects the right agent based on your request.
 
 ## Core Features
-
-**Debug**: Investigates errors by reading stack traces, analyzing network requests, tracing React renders, and finding root causes. Provides strategic debugging approaches instead of quick fixes.
 
 **Security**: Scans for OWASP Top 10 vulnerabilities (SQL injection, XSS, CSRF, auth issues, data exposure). Reviews authentication, validates sanitization, checks for hardcoded secrets, audits external API safety.
 

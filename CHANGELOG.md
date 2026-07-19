@@ -1,3 +1,7 @@
+2.15.0
+
+  Remove debug skill
+
 2.14.0
 
   Remove backend skill
